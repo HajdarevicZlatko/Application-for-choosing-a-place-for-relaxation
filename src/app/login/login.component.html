@@ -1,0 +1,72 @@
+
+
+
+  <!--The content below is only a placeholder and can be replaced.-->
+<app-nav [data]="podatak" *ngIf="!isLogIn"></app-nav>
+<app-log-in-nav *ngIf="isLogIn"></app-log-in-nav>
+<div class="row">
+    <div class="col-3 col-s-3 menu" style="visibility: hidden">
+      <ul>
+        <li (click)="changeName('/')">Sve</li>
+        <li (click)="changeName('Bazen')">Bazeni</li>
+        <li (click)="changeName('Bioskop')">Bioskopi</li>
+        <li (click)="changeName('Spa centar')">Spa centri</li>
+        <li (click)="changeName('Teren')">Fudbalski tereni</li>
+      </ul>
+    </div>
+    <div class="col-6 col-s-9">
+      <div class="glavni">
+          <h1>Login</h1>
+         
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                
+              <h5 *ngIf="success">Uspešno ste se ulogovali</h5>
+              <div class="centar">
+              <label>
+                <b>Korisničko ime</b>
+                <input type="text" formControlName="username">
+                <div *ngIf="submitted && loginForm.controls.username.errors" class="error">
+                  <div *ngIf="loginForm.controls.username.errors.required">Unesite korsničko ime</div>
+                </div>
+              </label>
+              
+              <label>
+                <b>Loznika</b>
+                <input type="password" formControlName="password">
+                <div *ngIf="submitted && loginForm.controls.password.errors" class="error">
+                  <div *ngIf="loginForm.controls.password.errors.required">Unesite lozinku</div>
+                </div>
+              </label>
+              
+              <input type="submit" value="Login" class="cta">
+            </div>
+            </form>
+          
+            <div id="Error"></div>
+          </div>
+      </div>    
+    
+   
+    <div class="col-3 col-s-12" style="visibility: hidden">
+        <div class="aside">
+          <h2>Sta?</h2>
+          <p>Zelimo da pomognemo maksimalno da stres nestane.</p>
+          <h2>Gde?</h2>
+          <p>Na svim mestima koji su se prijavili na nasu aplikaciju studenti ce imati popust.</p>
+          <h2>Zasto?</h2>
+          <p>Zelimo da pomognemo maksimalno da stres nestane.</p>
+        </div>
+      </div>
+</div>
+
+    
+  
+
+  
+
+
+
+
+
+
+

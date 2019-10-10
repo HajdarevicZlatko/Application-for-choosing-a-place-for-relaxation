@@ -1,0 +1,15 @@
+<section>
+
+    <div id="navigacija">{{podatak}}</div>
+    <div></div>
+    <div class="navigacijaMeni"><button mat-button [matMenuTriggerFor]="menu">Menu</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink='/'><span class="dugmad">Home</span></button> 
+          <button mat-menu-item routerLink='/klijent'><span class="dugmad">Profile</span></button>
+          <button mat-menu-item routerLink='/istorija' id="LogIn"><span class="dugmad">Istorija</span></button>
+          <button mat-menu-item (click)="LogOut()" id="LogIn"><span class="dugmad">Log out</span></button>
+        </mat-menu></div>
+    
+
+
+</section>
